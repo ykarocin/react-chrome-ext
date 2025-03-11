@@ -268,7 +268,8 @@ const LoadGraph = ({ data }: { data: Partial<SerializedGraph> }) => {
       renderEdgeLabels: true,
       defaultDrawNodeLabel: drawLabel,
       defaultDrawNodeHover: drawHover,
-      edgeLabelSize: 12,
+      labelSize: 16,
+      edgeLabelSize: 24,
       edgeLabelFont: "Arial",
       edgeLabelWeight: "bold",
       edgeLabelColor: { color: "#000" }
@@ -278,6 +279,15 @@ const LoadGraph = ({ data }: { data: Partial<SerializedGraph> }) => {
   useEffect(() => {
     const graph = new Graph();
     graph.import(data);
+    
+    graph.forEachNode((node, edge) => {
+      graph.setNodeAttribute(node, "size", 20);
+    });
+
+    graph.forEachEdge((edge) => {
+      graph.setEdgeAttribute(edge, "size", 6); // Define a largura da aresta
+    })
+
     loadGraph(graph);
     resetCamera();
   }, [data, loadGraph, resetCamera]);

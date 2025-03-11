@@ -70,7 +70,7 @@ const dfGraphDataFourNodes = (L: lineData, R: lineData, LC: lineData, RC: lineDa
     {
       key: "0",
       attributes: {
-        x: 0,
+        x: -0.3,
         y: 0,
         label: `${getClassFromJavaFilename(L.file)}:${L.line}`,
         method: `${getMethodNameFromJavaMethod(L.method)}`,
@@ -82,7 +82,7 @@ const dfGraphDataFourNodes = (L: lineData, R: lineData, LC: lineData, RC: lineDa
     {
       key: "1",
       attributes: {
-        x: 0,
+        x: -0.3,
         y: -1,
         label: `${getClassFromJavaFilename(R.file)}:${R.line}`,
         method: `${getMethodNameFromJavaMethod(R.method)}`,
@@ -94,7 +94,7 @@ const dfGraphDataFourNodes = (L: lineData, R: lineData, LC: lineData, RC: lineDa
     {
       key: "2",
       attributes: {
-        x: 1,
+        x: 1.3,
         y: 0,
         label: `${getClassFromJavaFilename(LC.file)}:${LC.line}`,
         method: `${getMethodNameFromJavaMethod(LC.method)}`,
@@ -106,7 +106,7 @@ const dfGraphDataFourNodes = (L: lineData, R: lineData, LC: lineData, RC: lineDa
     {
       key: "3",
       attributes: {
-        x: 1,
+        x: 1.3,
         y: -1,
         label: `${getClassFromJavaFilename(RC.file)}:${RC.line}`,
         method: `${getMethodNameFromJavaMethod(RC.method)}`,
