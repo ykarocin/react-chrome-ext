@@ -19,7 +19,7 @@ import { expandTop, expandBottom } from "../Diff/InsertButtons";
 
 const LABEL_Y_OFFSET = 4;
 const HOVER_PADDING = 2;
-const CAMERA_DEFAULT_ZOOMING_RATIO = 1.2;
+const CAMERA_DEFAULT_ZOOMING_RATIO = 1.5;
 
 const sigmaStyle = { height: "500px", width: "100%" };
 
@@ -268,7 +268,7 @@ const LoadGraph = ({ data }: { data: Partial<SerializedGraph> }) => {
       renderEdgeLabels: true,
       defaultDrawNodeLabel: drawLabel,
       defaultDrawNodeHover: drawHover,
-      labelSize: 16,
+      labelSize: 20,
       edgeLabelSize: 24,
       edgeLabelFont: "Arial",
       edgeLabelWeight: "bold",
@@ -280,8 +280,8 @@ const LoadGraph = ({ data }: { data: Partial<SerializedGraph> }) => {
     const graph = new Graph();
     graph.import(data);
     
-    graph.forEachNode((node, edge) => {
-      graph.setNodeAttribute(node, "size", 20);
+    graph.forEachNode((node) => {
+      graph.setNodeAttribute(node, "size", 30);
     });
 
     graph.forEachEdge((edge) => {
