@@ -43,19 +43,6 @@ const filterDuplicatedDependencies = (dependencies: dependency[]) => {
   return uniqueDependencies;
 };
 
-const filterCFDependencies = (dependencies: dependency[]) => {
-  const cfDependencies: dependency[] = [];
-  dependencies.forEach((dep) => {
-    if (
-        dep.body.interference[2].location.class !== "java.lang.Integer" 
-      ) {
-      cfDependencies.push(dep);
-    }
-  });
-
-  return cfDependencies;
-};
-
 const filterCFSubStack = (dependencies: dependency[]) => {
   return dependencies.filter((depA, indexA) => {
     const stackA = depA.body.interference[0].stackTrace;
@@ -197,4 +184,4 @@ const updateLocationFromStackTrace = (dep: dependency, options?: { inplace?: boo
   }
 };
 
-export { filterDuplicatedDependencies, updateLocationFromStackTrace, filterCFDependencies, filterCFSubStack };
+export { filterDuplicatedDependencies, updateLocationFromStackTrace, filterCFSubStack };
